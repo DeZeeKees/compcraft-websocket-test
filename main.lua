@@ -8,5 +8,6 @@ end
 ws.send("Hello World")
 
 local response, _ = ws.receive()
+print(response)
 
 ws.close()
