@@ -6,5 +6,7 @@ if not ws then
 end
 
 ws.send("Hello World")
-print(ws.receive())
+
+local response, _ = ws.receive()
+
 ws.close()
