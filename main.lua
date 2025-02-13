@@ -5,9 +5,21 @@ if not ws then
     return
 end
 
-ws.send("Hello World")
+print("Connected to WebSocket server.")
 
-local response, _ = ws.receive()
-print(response)
+while true do
+    local response, err = ws.receive()
+
+    if not response then
+        print("Socket closed: " .. tostring(err))
+        break
+    end
+
+    local json = textutils.unserialiseJSON(response)
+
+    if json.event == "count" then
+        print(json.value)
+    end
+end
 
 ws.close()

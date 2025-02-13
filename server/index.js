@@ -17,6 +17,24 @@ fastify.get("/ws/index", { websocket: true }, async (socket, request) => {
     })
 })
 
+// New counter WebSocket route
+fastify.get("/ws/counter", { websocket: true }, async (socket, request) => {
+    let count = 0;
+
+    const interval = setInterval(() => {
+        if (socket.readyState === 1) { // Check if connection is open
+            socket.send(JSON.stringify({ event: "count", value: count }));
+            count++;
+        } else {
+            clearInterval(interval);
+        }
+    }, 1000); // Send count every second
+
+    socket.on("close", () => {
+        clearInterval(interval);
+    });
+});
+
 try {
     await fastify.listen({
         port: 8080
