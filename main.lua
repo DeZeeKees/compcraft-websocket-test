@@ -1,5 +1,10 @@
-local req = http.get("http://localhost:8080")
-local content = req.readAll()
-print(content)
+local ws, err = http.websocket("ws://localhost:8080/ws/index")
 
-req.close()
+if not ws then
+    print("WebSocket error: " .. err)
+    return
+end
+
+ws.send("Hello World")
+print(ws.receive())
+ws.close()
