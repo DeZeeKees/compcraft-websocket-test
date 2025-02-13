@@ -2,7 +2,7 @@ local repo = "DeZeeKees/yourrepo" -- Replace with your GitHub username and repo 
 local branch = "main" -- Change if using a different branch
 
 local files = { -- List of Lua files to fetch
-    "main.lua",
+    "main.lua"
 }
 
 local baseUrl = "https://raw.githubusercontent.com/" .. repo .. "/" .. branch .. "/"
