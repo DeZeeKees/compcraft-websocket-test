@@ -1,4 +1,4 @@
-local repo = "DeZeeKees/yourrepo" -- Replace with your GitHub username and repo name
+local repo = "DeZeeKees/compcraft-websocket-test" -- Replace with your GitHub username and repo name
 local branch = "main" -- Change if using a different branch
 
 local files = { -- List of Lua files to fetch
