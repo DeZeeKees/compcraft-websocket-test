@@ -1,4 +1,4 @@
-local ws, err = http.websocket("ws://localhost:8080/ws/index")
+local ws, err = http.websocket("ws://localhost:8080/ws/counter")
 
 if not ws then
     print("WebSocket error: " .. err)
