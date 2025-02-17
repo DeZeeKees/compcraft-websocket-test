@@ -14,7 +14,7 @@ local items = me.listItems()  -- Advanced Peripherals method
 local jsonData = textutils.serialiseJSON(items, { allow_repetitions = true })
 
 -- Define the webserver URL
-local url = "http://example.com/api/items"  -- Change this to your actual webserver endpoint
+local url = "http://192.168.193.52/api/items"  -- Change this to your actual webserver endpoint
 
 -- Send the JSON data to the webserver
 local response = http.post(url, jsonData, { ["Content-Type"] = "application/json" })
