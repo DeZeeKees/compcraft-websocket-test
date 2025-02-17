@@ -35,6 +35,17 @@ fastify.get("/ws/counter", { websocket: true }, async (socket, request) => {
     });
 });
 
+// Endpoint to receive JSON data and save it to a file
+fastify.post('/api/items', async (request, reply) => {
+    try {
+        const data = request.body;
+        writeFileSync('items.json', JSON.stringify(data, null, 2));
+        reply.send({ success: true, message: 'Data saved to items.json' });
+    } catch (err) {
+        reply.status(500).send({ success: false, error: err.message });
+    }
+});
+
 try {
     await fastify.listen({
         port: 8080
