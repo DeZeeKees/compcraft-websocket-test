@@ -2,7 +2,7 @@ local repo = "DeZeeKees/compcraft-websocket-test" -- Replace with your GitHub us
 local branch = "main" -- Change if using a different branch
 
 local files = { -- List of Lua files to fetch
-    "main.lua"
+    "main.lua",
     "me-test.lua"
 }
 
