@@ -3,6 +3,7 @@ local branch = "main" -- Change if using a different branch
 
 local files = { -- List of Lua files to fetch
     "main.lua"
+    "me-test.lua"
 }
 
 local baseUrl = "https://raw.githubusercontent.com/" .. repo .. "/" .. branch .. "/"
